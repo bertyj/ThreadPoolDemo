@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button_single_task"
+        style="@style/SimpleButton"
+        android:text="Single Task Executor" />
+
+    <Button
+        android:id="@+id/button_limited_task"
+        style="@style/SimpleButton"
+        android:text="Limited Task Executor" />
+
+    <Button
+        android:id="@+id/button_all_task"
+        style="@style/SimpleButton"
+        android:text="All Task Executor" />
+
+    <Button
+        android:id="@+id/button_scheduled_task"
+        style="@style/SimpleButton"
+        android:text="Scheduled Task Executor" />
+
+    <Button
+        android:id="@+id/button_scheduled_task_factory"
+        style="@style/SimpleButton"
+        android:text="Scheduled Task Factory Executor" />
+
+</LinearLayout>
