@@ -1,4 +1,6 @@
 package com.conti.jing.threadpooldemo;
 
-public class AllTaskActivity {
+import android.app.Activity;
+
+public class AllTaskActivity extends Activity {
 }

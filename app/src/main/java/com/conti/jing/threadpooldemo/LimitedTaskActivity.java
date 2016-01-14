@@ -1,4 +1,6 @@
 package com.conti.jing.threadpooldemo;
 
-public class LimitedTaskActivity {
+import android.app.Activity;
+
+public class LimitedTaskActivity extends Activity {
 }

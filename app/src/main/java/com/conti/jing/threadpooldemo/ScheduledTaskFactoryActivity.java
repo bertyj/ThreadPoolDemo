@@ -1,5 +1,7 @@
 package com.conti.jing.threadpooldemo;
 
-public class ScheduledTaskFactoryActivity {
+import android.app.Activity;
+
+public class ScheduledTaskFactoryActivity extends Activity {
 
 }

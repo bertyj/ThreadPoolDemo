@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
@@ -22,6 +23,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public static ExecutorService sAllTaskExecutorService;
     public static ExecutorService sScheduledTaskExecutorService;
     public static ExecutorService sScheduledTaskFactoryExecutorService;
+    public static final int TASK_TOTAL_NUM = Runtime.getRuntime().availableProcessors() * 2;
+    public static boolean sTaskIsCanceled;
+    public static List<ProcessItemAsyncTask> sTaskList;
 
     static {
         sSingleTaskExecutorService = Executors.newSingleThreadExecutor();
