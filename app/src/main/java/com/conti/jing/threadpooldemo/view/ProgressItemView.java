@@ -1,4 +1,4 @@
-package com.conti.jing.threadpooldemo;
+package com.conti.jing.threadpooldemo.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -6,11 +6,13 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class ProcessItemView extends LinearLayout {
+import com.conti.jing.threadpooldemo.R;
+
+public class ProgressItemView extends LinearLayout {
     private TextView mItemTitleTextView;
     private ProgressBar mItemContentProgressBar;
 
-    public ProcessItemView(Context context, AttributeSet attrs) {
+    public ProgressItemView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

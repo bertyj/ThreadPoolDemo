@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.conti.jing.threadpooldemo.ProcessItemView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.conti.jing.threadpooldemo.view.ProgressItemView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -17,4 +17,4 @@
         android:layout_height="wrap_content"
         android:max="100" />
 
-</com.conti.jing.threadpooldemo.ProcessItemView>
+</com.conti.jing.threadpooldemo.view.ProgressItemView>

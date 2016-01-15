@@ -7,6 +7,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.conti.jing.threadpooldemo.executor.AllTaskExecutorActivity;
+import com.conti.jing.threadpooldemo.executor.LimitedTaskExecutorActivity;
+import com.conti.jing.threadpooldemo.executor.ScheduledTaskExecutorActivity;
+import com.conti.jing.threadpooldemo.executor.ScheduledTaskFactoryExecutorActivity;
+import com.conti.jing.threadpooldemo.executor.SingleTaskExecutorActivity;
+import com.conti.jing.threadpooldemo.view.ProgressItemAsyncTask;
+
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -25,7 +32,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public static ExecutorService sScheduledTaskFactoryExecutorService;
     public static final int TASK_TOTAL_NUM = Runtime.getRuntime().availableProcessors() * 2;
     public static boolean sTaskIsCanceled;
-    public static List<ProcessItemAsyncTask> sTaskList;
+    public static List<ProgressItemAsyncTask> sTaskList;
+    public static final ThreadFactory THREAD_FACTORY = Executors.defaultThreadFactory();
 
     static {
         sSingleTaskExecutorService = Executors.newSingleThreadExecutor();
@@ -74,19 +82,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
         int id = view.getId();
         switch (id) {
             case R.id.button_single_task:
-                startActivity(new Intent(this, SingleTaskActivity.class));
+                startActivity(new Intent(this, SingleTaskExecutorActivity.class));
                 break;
             case R.id.button_limited_task:
-                startActivity(new Intent(this, LimitedTaskActivity.class));
+                startActivity(new Intent(this, LimitedTaskExecutorActivity.class));
                 break;
             case R.id.button_all_task:
-                startActivity(new Intent(this, AllTaskActivity.class));
+                startActivity(new Intent(this, AllTaskExecutorActivity.class));
                 break;
             case R.id.button_scheduled_task:
-                startActivity(new Intent(this, ScheduledTaskActivity.class));
+                startActivity(new Intent(this, ScheduledTaskExecutorActivity.class));
                 break;
             case R.id.button_scheduled_task_factory:
-                startActivity(new Intent(this, ScheduledTaskFactoryActivity.class));
+                startActivity(new Intent(this, ScheduledTaskFactoryExecutorActivity.class));
                 break;
         }
     }

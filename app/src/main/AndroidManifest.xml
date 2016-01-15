@@ -15,11 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SingleTaskActivity" />
-        <activity android:name=".LimitedTaskActivity" />
-        <activity android:name=".AllTaskActivity" />
-        <activity android:name=".ScheduledTaskActivity" />
-        <activity android:name=".ScheduledTaskFactoryActivity" />
+        <activity android:name=".executor.SingleTaskExecutorActivity" />
+        <activity android:name=".executor.LimitedTaskExecutorActivity" />
+        <activity android:name=".executor.AllTaskExecutorActivity" />
+        <activity android:name=".executor.ScheduledTaskExecutorActivity" />
+        <activity android:name=".executor.ScheduledTaskFactoryExecutorActivity" />
     </application>
 
 </manifest>

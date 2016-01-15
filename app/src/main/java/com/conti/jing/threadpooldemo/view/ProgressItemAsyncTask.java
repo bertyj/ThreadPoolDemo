@@ -1,15 +1,17 @@
-package com.conti.jing.threadpooldemo;
+package com.conti.jing.threadpooldemo.view;
 
 import android.os.AsyncTask;
 import android.os.SystemClock;
 
-public class ProcessItemAsyncTask extends AsyncTask<Void, Integer, Void> {
-    private ProcessItemView mProcessItemView;
-    private StringBuffer mItemTitle;
-    private int mItemIndex;
+import com.conti.jing.threadpooldemo.MainActivity;
 
-    public ProcessItemAsyncTask(ProcessItemView processItemView) {
-        this.mProcessItemView = processItemView;
+public class ProgressItemAsyncTask extends AsyncTask<Void, Integer, Void> {
+    private ProgressItemView mProgressItemView;
+    private StringBuffer mItemTitle;
+    private static int mItemIndex;
+
+    public ProgressItemAsyncTask(ProgressItemView progressItemView) {
+        this.mProgressItemView = progressItemView;
         this.mItemTitle = new StringBuffer("执行任务：");
         if (mItemIndex > MainActivity.TASK_TOTAL_NUM) {
             mItemIndex = 0;
@@ -38,12 +40,12 @@ public class ProcessItemAsyncTask extends AsyncTask<Void, Integer, Void> {
 
     @Override
     protected void onProgressUpdate(Integer... values) {
-        mProcessItemView.setItemContent(values[0]);
+        mProgressItemView.setItemContent(values[0]);
     }
 
     @Override
     protected void onPreExecute() {
-        mProcessItemView.setItemTitle(mItemTitle.toString());
+        mProgressItemView.setItemTitle(mItemTitle.toString());
     }
 
 }
