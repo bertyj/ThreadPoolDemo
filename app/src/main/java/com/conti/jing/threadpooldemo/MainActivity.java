@@ -3,7 +3,6 @@ package com.conti.jing.threadpooldemo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -30,32 +29,33 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public static ExecutorService sAllTaskExecutorService;
     public static ExecutorService sScheduledTaskExecutorService;
     public static ExecutorService sScheduledTaskFactoryExecutorService;
-    public static final int TASK_TOTAL_NUM = Runtime.getRuntime().availableProcessors() * 2;
+//    public static final int TASK_TOTAL_NUM = Runtime.getRuntime().availableProcessors() * 2;
+    public static final int TASK_TOTAL_NUM = 10;
     public static boolean sTaskIsCanceled;
     public static List<ProgressItemAsyncTask> sTaskList;
     public static final ThreadFactory THREAD_FACTORY = Executors.defaultThreadFactory();
 
-    static {
-        sSingleTaskExecutorService = Executors.newSingleThreadExecutor();
-        sLimitedTaskExecutorService = Executors.newFixedThreadPool(3);
-        sAllTaskExecutorService = Executors.newCachedThreadPool();
-        sScheduledTaskExecutorService = Executors.newScheduledThreadPool(3);
-        sScheduledTaskFactoryExecutorService = Executors.newFixedThreadPool(3, new ThreadFactory() {
-            @Override
-            public Thread newThread(Runnable runnable) {
-                Thread thread = new Thread(runnable);
-                thread.setName("Scheduled_Task_Factory_Thread");
-                thread.setDaemon(true);
-                return thread;
-            }
-        });
-        sScheduledTaskFactoryExecutorService.submit(new Runnable() {
-            @Override
-            public void run() {
-                Log.i("Running Log", "Scheduled_Task_Factory_Thread Submit Running");
-            }
-        });
-    }
+//    static {
+//        sSingleTaskExecutorService = Executors.newSingleThreadExecutor();
+//        sLimitedTaskExecutorService = Executors.newFixedThreadPool(3);
+//        sAllTaskExecutorService = Executors.newCachedThreadPool();
+//        sScheduledTaskExecutorService = Executors.newScheduledThreadPool(3);
+//        sScheduledTaskFactoryExecutorService = Executors.newFixedThreadPool(3, new ThreadFactory() {
+//            @Override
+//            public Thread newThread(Runnable runnable) {
+//                Thread thread = new Thread(runnable);
+//                thread.setName("Scheduled_Task_Factory_Thread");
+//                thread.setDaemon(true);
+//                return thread;
+//            }
+//        });
+//        sScheduledTaskFactoryExecutorService.submit(new Runnable() {
+//            @Override
+//            public void run() {
+//                Log.i("Running Log", "Scheduled_Task_Factory_Thread Submit Running");
+//            }
+//        });
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -14,7 +14,6 @@ import java.util.concurrent.Executors;
 
 public class SingleTaskExecutorActivity extends Activity {
     public static ExecutorService sSingleTaskExecutorService;
-    private boolean mIsItemClicked;
     private TextView mTaskTitleTextView;
     private ListView mTaskProgressListView;
 
@@ -26,15 +25,15 @@ public class SingleTaskExecutorActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_common_task);
-        setView();
+        initView();
     }
 
-    private void setView() {
+    private void initView() {
         mTaskTitleTextView = (TextView) findViewById(R.id.textview_task_title);
-        mTaskTitleTextView.setText("Single Task Executor");
+        mTaskTitleTextView.setText("Single Task Executor Mode");
         mTaskProgressListView = (ListView) findViewById(R.id.listview_task_progress);
         ProgressListAdapter progressListAdapter = new ProgressListAdapter(this, MainActivity.TASK_TOTAL_NUM, sSingleTaskExecutorService);
         mTaskProgressListView.setAdapter(progressListAdapter);
-//        mTaskProgressListView.setOnItemClickListener();
     }
+
 }

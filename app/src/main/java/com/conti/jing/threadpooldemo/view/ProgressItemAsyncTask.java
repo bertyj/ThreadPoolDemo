@@ -26,10 +26,10 @@ public class ProgressItemAsyncTask extends AsyncTask<Void, Integer, Void> {
         if (!isCancelled() && !MainActivity.sTaskIsCanceled) {
             int progressValue = 0;
             while (progressValue < 101) {
-                if (progressValue < 70) {
+                if (progressValue < 60) {
                     SystemClock.sleep(100);
                 } else {
-                    SystemClock.sleep(200);
+                    SystemClock.sleep(150);
                 }
                 publishProgress(progressValue);
                 progressValue++;

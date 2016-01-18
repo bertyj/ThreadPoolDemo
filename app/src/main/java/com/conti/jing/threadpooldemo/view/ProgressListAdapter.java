@@ -43,9 +43,10 @@ public class ProgressListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        ProgressItemAsyncTask progressItemAsyncTask;
         if (convertView == null) {
             convertView = mLayoutInflater.inflate(R.layout.layout_progress_item, null);
-            ProgressItemAsyncTask progressItemAsyncTask = new ProgressItemAsyncTask((ProgressItemView) convertView);
+            progressItemAsyncTask = new ProgressItemAsyncTask((ProgressItemView) convertView);
             progressItemAsyncTask.executeOnExecutor(mTaskExecutorService);
             MainActivity.sTaskList.add(progressItemAsyncTask);
         }
