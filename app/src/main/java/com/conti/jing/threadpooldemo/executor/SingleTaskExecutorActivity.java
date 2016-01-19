@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class SingleTaskExecutorActivity extends Activity {
-    public static ExecutorService sSingleTaskExecutorService;
+    private static ExecutorService sSingleTaskExecutorService;
     private TextView mTaskTitleTextView;
     private ListView mTaskProgressListView;
 
